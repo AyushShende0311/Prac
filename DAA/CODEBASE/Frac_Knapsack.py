@@ -15,8 +15,8 @@ def fractionalKnapsack(W, arr):
 			break
 	return finalvalue
 
-if __name__ == "__main__":
-	W = 50
-	arr = [Item(60, 10), Item(100, 20), Item(120, 30)]
-	max_val = fractionalKnapsack(W, arr)
-	print(max_val)
+
+W = 50
+arr = [Item(60, 10), Item(100, 20), Item(120, 30)]
+max_val = fractionalKnapsack(W, arr)
+print(max_val)
