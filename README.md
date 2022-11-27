@@ -19,7 +19,7 @@ SEM 7 Practicals
 ---
 # ML
 
-| Assign # | Practical Keywords                          | PDF                                                                              |TEXT|NOTEBOOKS|
+| Assign # | Practical Keywords                          | PDF |TEXT|NOTEBOOKS|
 |----------|---------------------------------------------|---|---|---|
 |     1    | **UBER DATASET**                            | <a href="https://github.com/yd3-test5/SEM7_PRACX/blob/main/ML/ML_PRACTICAL_1_UBER.pdf">LINK</a>     | <a href="https://github.com/yd3-test5/SEM7_PRACX/blob/main/ML/1st_Uber_Ride.txt">LINK</a>           |  <a href="https://github.com/yd3-test5/SEM7_PRACX/blob/main/ML/ML_Assignment_No_1.ipynb">LINK</a>     |
 |     2    | EMAIL SPAM DETECTION                        | <a href="https://github.com/yd3-test5/SEM7_PRACX/blob/main/ML/ML_PRACTICAL_2_email.pdf">LINK</a>    | <a href="https://github.com/yd3-test5/SEM7_PRACX/blob/main/ML/2ndClassifyEmail.txt">LINK</a>        |  <a href="https://github.com/yd3-test5/SEM7_PRACX/blob/main/ML/ML_Assignment_No_2.ipynb">LINK</a>    |
