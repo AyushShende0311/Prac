@@ -1,0 +1,76 @@
+/*
+ * Problem Statement :- Write a program to implement Huffman Encoding using a greedy
+ * 						strategy.
+ *
+ * Time Complexity  : O(nlogn)   (n => number of unique characters in string)
+ * Space Complexity : O(n)
+ */
+
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+struct Node{
+    char val;
+    int freq;
+    Node * left, * right;
+    
+    Node(char val,int freq){
+        this->val = val;
+        this->freq = freq;
+        left = right = NULL;
+    }
+};
+struct comp{
+    bool operator()(Node* a,Node*b){
+        return a->freq > b->freq;
+    }
+};
+
+void encode(Node* head, string s){
+    if(!head){
+        return;
+    }
+    if(head->val != '$'){
+        
+        cout<<head->val<<":"<<s<<endl;
+        
+    }
+    encode(head->left, s+'0');
+    encode(head->right, s+'1');
+}
+
+int main()
+{
+    
+    priority_queue<Node*, vector<Node*>, comp> mh;
+    Node* a = new Node('a', 5);
+    Node* b = new Node('b', 9);
+    Node* c = new Node('c', 12);
+    Node* d = new Node('d', 13);
+    Node* e = new Node('e', 16);
+    Node* f = new Node('f', 45);
+    
+    mh.push(a);
+    mh.push(b);
+    mh.push(c);
+    mh.push(d);
+    mh.push(e);
+    mh.push(f);
+    
+    while(mh.size() != 1){
+        Node* left = mh.top();
+        mh.pop();
+        Node *right = mh.top();
+        mh.pop();
+        
+        Node* newn = new Node('$', left->freq + right->freq);
+        
+        newn->left = left;
+        newn->right = right;
+        
+        mh.push(newn);
+    }
+    encode(mh.top(), "");
+    return 0;
+}

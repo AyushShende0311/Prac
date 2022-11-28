@@ -1,0 +1,61 @@
+/*
+ * Problem Statement :- Design n-Queens matrix having first Queen placed. Use backtracking
+ * to place remaining Queens to generate the final n-queen's matrix.
+ *
+ * Time Complexity  : O(n!)
+ * Space Complexity : O(n)
+ */
+#include<bits/stdc++.h>
+using namespace std;
+
+bool canPlaceQueen(int row, int col,int n ,vector<string> &board,vector<int> &left,vector<int> &topLeft,vector<int> &bottomLeft){
+    if(left[row]==0 && topLeft[(col-row)+(n-1)]==0 && bottomLeft[(row+col)] == 0){
+        return true;
+    }
+    return false;
+}
+
+
+void placeQueen(int col,int n, vector<string> &board, vector<vector<string>> &ans, vector<int> &left,vector<int> &topLeft,vector<int> &bottomLeft){
+    if(col == n){
+        ans.push_back(board);
+        return;
+    }
+
+    for(int row=0; row<n; row++){
+        if(canPlaceQueen(row,col, n,board, left,topLeft,bottomLeft)){
+            board[col][row] = 'Q';
+            left[row] = 1;
+            topLeft[(col-row)+(n-1)] = 1;
+            bottomLeft[(row+col)] = 1;
+            placeQueen(col+1,n, board,ans,left,topLeft,bottomLeft);
+            board[col][row] = '*';
+            left[row] = 0;
+            topLeft[(col-row)+(n-1)] = 0;
+            bottomLeft[(row+col)] = 0;
+
+        }
+    }
+}
+
+int main(){
+    int n;
+    cin>>n;
+    vector<string> board(n, string(n,'*'));
+    vector<vector<string>> ans;
+    vector<int> left(n,0);
+    vector<int> topLeft((2*(n-1))+1, 0);
+     vector<int> bottomLeft((2*(n-1))+1, 0);
+
+    placeQueen(0,n,board,ans,left,topLeft,bottomLeft);
+
+    for(int i=0 ;i<ans.size(); i++){
+        for(int j=0; j<n; j++){
+            for(int k=0;k<n;k++){
+                cout<<ans[i][j][k]<<" ";
+            }
+            cout<<endl;
+        }
+        cout<<endl<<endl<<endl;
+    }
+}
