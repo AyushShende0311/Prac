@@ -1,10 +1,3 @@
-# SEM7_PRACX
-SEM 7 Practicals
-
-<h3><a href="https://github.com/yd3-test5/SEM7_PRACX/blob/main/WRITEUPS/LP3.pdf">WRITE-UPs</a></h3>
-<a href="https://github.com/yd3-test5/SEM7_PRACX/raw/main/WRITEUPS/LP%20III%20Lab%20Manual%20BE%20SKNCOE21-22.pdf">`</a>
-
-
 ---
 # DAA
 
